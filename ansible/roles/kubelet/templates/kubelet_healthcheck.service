@@ -28,7 +28,7 @@ Type=simple
 User=root
 RestartSec=10s
 
-ExecStart=/usr/libexec/nokia/kubelet_healthcheck.sh
+ExecStart={{ caas.libexec_dir }}/kubelet_healthcheck.sh
 
 Restart=always
 LimitNOFILE=65536
