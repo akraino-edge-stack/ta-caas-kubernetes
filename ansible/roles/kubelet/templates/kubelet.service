@@ -32,11 +32,11 @@ TimeoutStopSec=45s
 RestartSec=10s
 EnvironmentFile=/etc/kubernetes/env.list
 
-ExecStartPre=/usr/libexec/nokia/kubelet_start.sh
+ExecStartPre={{ caas.libexec_dir }}/kubelet_start.sh
 
 ExecStart=/usr/bin/kubelet {{ kubelet_params | join(' ') }}
 
-ExecStop=/usr/libexec/nokia/kubelet_stop.sh
+ExecStop={{ caas.libexec_dir }}/kubelet_stop.sh
 
 Restart=always
 LimitNOFILE=65536
