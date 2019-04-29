@@ -42,7 +42,7 @@
 - name: template kubelet scripts
   template:
     src: "{{ item }}"
-    dest: /usr/libexec/nokia/{{ item }}
+    dest: "{{ caas.libexec_dir }}/{{ item }}"
     mode: 0700
   with_items:
     - kubelet_start.sh
@@ -65,4 +65,3 @@
     path: "/etc/kubernetes/kubeconfig/kubeletc.yml"
     state: touch
   when: hostname in groups.caas_worker
-
