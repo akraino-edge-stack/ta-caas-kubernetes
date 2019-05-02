@@ -1,0 +1,141 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- name: concat certs for apiserver part 1
+  shell: "cat {{ caas.cert_path }}/apiserver{{ nodeindex }}.pem > {{ caas.cert_path }}/tls-cert.pem"
+  become_user: "root"
+
+- name: concat certs for apiserver part 2
+  shell: "cat {{ caas.cert_path }}/ca.pem >> {{ caas.cert_path }}/tls-cert.pem"
+  become_user: "root"
+
+- name: reducing permission of key file and cert file
+  file:
+    path: "{{ caas.cert_path }}/tls-cert.pem"
+    mode: 0000
+  become_user: "root"
+
+- name: adding default acl read to {{ users.admin_user_name }} to {{ caas.cert_path }}/tls-cert.epm
+  acl:
+    name:  "{{ caas.cert_path }}/tls-cert.pem"
+    entity: "{{ users.admin_user_name }}"
+    etype: user
+    permissions: r
+    state: present
+  become_user: "root"
+
+- name: adding default acl read to kube to {{ cert_path }}/tls-cert.epm
+  acl:
+    name:  "{{ caas.cert_path }}/tls-cert.pem"
+    entity: "kube"
+    etype: user
+    permissions: r
+    state: present
+  become_user: "root"
+
+- name: set permission ca.pem and ca-key.pem
+  acl:
+    name: "{{ item }}"
+    entity: "kube"
+    etype: user
+    permissions: r
+    state: present
+  with_items:
+    - "/etc/openssl/ca.pem"
+    - "/etc/openssl/ca-key.pem"
+  become_user: "root"
+
+- name: create directory for kubernetes_audit_log
+  file:
+    path: /var/log/audit/kube_apiserver
+    recurse: yes
+    owner: "{{ caas.uid.kube }}"
+    group: "{{ caas.uid.kube }}"
+    state: directory
+  become_user: "root"
+
+- name: create directory for audit policy
+  file:
+    path: "{{ caas.caas_policy_directory }}"
+    state: directory
+    recurse: yes
+  become_user: "root"
+
+- name: template audit policy
+  template:
+    src: audit-policy.yaml
+    dest: "{{ caas.caas_policy_directory }}/audit-policy.yaml"
+    mode: 0000
+  become_user: "root"
+
+- name: set permission to audit-policy.yaml
+  acl:
+    name:  "{{ caas.caas_policy_directory }}/audit-policy.yaml"
+    entity: "{{ item }}"
+    etype: user
+    permissions: r
+    state: present
+  with_items:
+    - "{{ caas.uid.kube }}"
+    - "{{ users.admin_user_name }}"
+  become_user: "root"
+
+- name: template apiserver
+  vars:
+    apiserver: "{{ ansible_host }}"
+    apiserver_port: "{{ caas.apiserver_secure_port }}"
+  template:
+    src: apiserver.yml
+    dest: /etc/kubernetes/manifests/apiserver.yml
+  become_user: "root"
+
+- name: wait for container to start
+  wait_for:
+    host: "{{ ansible_host }}"
+    port: "{{ caas.apiserver_secure_port }}"
+    state: started
+    timeout: "{{ caas.container_wait_timeout }}"
+
+- name: check for namespace
+  command: '/usr/bin/curl -I
+            https://{{ ansible_host }}:{{ caas.apiserver_secure_port }}/api/v1/namespaces/kube-system
+                    --key /etc/kubernetes/ssl/kubelet{{ nodeindex }}-key.pem
+                    --cert /etc/kubernetes/ssl/kubelet{{ nodeindex }}.pem
+                    --cacert /etc/openssl/ca.pem'
+  register: namespace_check
+  ignore_errors: yes
+
+- name: insert namespace
+  command: '/usr/bin/curl -i
+                https://{{ ansible_host }}:{{ caas.apiserver_secure_port }}/api/v1/namespaces
+                -X POST
+                -H "Content-Type: application/json"
+                --key /etc/kubernetes/ssl/kubelet{{ nodeindex }}-key.pem
+                --cert /etc/kubernetes/ssl/kubelet{{ nodeindex }}.pem
+                --cacert /etc/openssl/ca.pem
+                -d ''{"apiVersion":"v1","kind":"Namespace","metadata":{"name":"kube-system"}}'''
+  when: namespace_check.stdout.find('200 OK') != -1
+
+- name: template manifests
+  vars:
+    apiserver: "{{ caas.apiserver_svc_ip }}"
+    apiserver_port: "{{ caas.apiserver_svc_port }}"
+  template:
+    src: "{{ item }}"
+    dest: "/etc/kubernetes/manifests/{{ item }}"
+  with_items:
+    - cm.yml
+    - scheduler.yml
+  become_user: "root"

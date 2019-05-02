@@ -1,0 +1,46 @@
+#!/bin/sh
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+file_names=$1
+retry_counter=${2:-12}
+echo ${retry_counter}
+I=0
+Err_Flag=1
+
+while  [ $Err_Flag -ne 0 ] && [ $I -lt ${retry_counter} ]
+do
+  Err_Flag=0
+  for i in ${file_names};
+  do
+    if [ ! -e "${i}" ]
+    then
+      Err_Flag=$((Err_Flag+1))
+    fi
+  done
+  if [ $Err_Flag -ne 0 ]
+  then
+    I=$((I+1))
+    sleep 5
+  fi
+done
+
+if [ $I -ge ${retry_counter} ]
+then
+  echo "WARNING: At least one of the following file not found: ${file_names} !"
+  echo "WARNING: Exiting!"
+  exit 1
+else
+  echo "INFO: ${file_names} files found."
+fi

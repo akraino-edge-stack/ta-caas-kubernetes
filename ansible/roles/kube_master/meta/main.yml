@@ -1,0 +1,99 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+dependencies:
+  - role: creategroup
+    _name: kube
+    _gid: "{{ caas.uid.kube }}"
+    become: true
+    become_user: "root"
+
+  - role: createuser
+    _name: kube
+    _group: kube
+    _groups: ''
+    _shell: /sbin/nologin
+    _home: /
+    _uid: "{{ caas.uid.kube }}"
+    become: true
+    become_user: "root"
+
+  # apiserver cert
+  - role: cert
+    instance: "apiserver{{ nodeindex }}"
+    cert_path: /etc/kubernetes/ssl
+    common_name: "system:apiserver"
+    alt_names:
+      dns:
+        - "{{ caas.apiserver_service_name}}"
+        - "{{ caas.apiserver_in_hosts }}"
+      ip:
+        - "{{ ansible_host }}"
+        - "{{ caas.apiserver_svc_ip }}"
+    add_users:
+      - kube
+    become: true
+    become_user: "root"
+  # kube-controller-manager cert
+  - role: cert
+    instance: "kube-controller-manager{{ nodeindex }}"
+    cert_path: /etc/kubernetes/ssl
+    common_name: "system:kube-controller-manager"
+    org_name: "system:masters"
+    alt_names:
+      ip:
+        - "{{ ansible_host }}"
+    add_users:
+      - kube
+    kube_conf:
+      - path: "/etc/kubernetes/kubeconfig/cmc.yml"
+        apiserver: "{{ caas.apiserver_svc_ip }}"
+        apiserver_port: "{{ caas.apiserver_svc_port }}"
+    become: true
+    become_user: "root"
+  # scheduler cert
+  - role: cert
+    instance: "kube-scheduler{{ nodeindex }}"
+    cert_path: /etc/kubernetes/ssl
+    common_name: "system:kube-scheduler"
+    alt_names:
+      ip:
+        - "{{ ansible_host }}"
+    add_users:
+      - kube
+    kube_conf:
+      - path: "/etc/kubernetes/kubeconfig/schedulerc.yml"
+        apiserver: "{{ caas.apiserver_svc_ip }}"
+        apiserver_port: "{{ caas.apiserver_svc_port }}"
+    become: true
+    become_user: "root"
+
+  - role: cert
+    instance: "metrics"
+    cert_name: "metrics.crt"
+    key_name: "metrics.key"
+    common_name: "metrics"
+    cert_path: /etc/kubernetes/ssl
+    alt_names:
+      dns:
+        - custom-metrics-apiserver.kube-system.svc.nokia.net
+    add_users:
+      - kube
+    become: true
+    become_user: "root"
+
+  - role: docker_image_load
+    images:
+      - hyperkube

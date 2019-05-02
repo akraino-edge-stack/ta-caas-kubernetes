@@ -1,0 +1,43 @@
+{#
+Copyright 2019 Nokia
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+#}
+---
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+address: "{{ networking.infra_internal.ip }}"
+authentication:
+  x509:
+    clientCAFile: "/etc/openssl/ca.pem"
+  webhook:
+    enabled: true
+  anonymous:
+    enabled: false
+authorization:
+  mode: "AlwaysAllow"
+cgroupsPerQOS: true
+cgroupRoot: "/"
+cgroupDriver: cgroupfs
+clusterDNS:
+- {{ caas.dns_svc_ip }}
+clusterDomain: nokia.net
+staticPodPath: "/etc/kubernetes/manifests"
+rotateCertificates: true
+runtimeRequestTimeout: 5m0s
+streamingConnectionIdleTimeout: 5m0s
+tlsCertFile: "/etc/kubernetes/ssl/kubelet-server.pem"
+tlsPrivateKeyFile: "/etc/kubernetes/ssl/kubelet-server-key.pem"
+featureGates:
+  CPUManager: false
+  DevicePlugins: true

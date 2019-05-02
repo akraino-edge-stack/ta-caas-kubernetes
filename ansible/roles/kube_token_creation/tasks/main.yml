@@ -1,0 +1,74 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- name: create directory for kube token
+  file:
+    path: "{{ caas.cert_path }}"
+    state: directory
+    recurse: yes
+
+- name: Check token
+  stat:
+    path: "{{ caas.cert_path }}/{{ caas.token_filename }}"
+  register: token_file
+
+- name: Generate token
+  shell: "head -c 16 /dev/urandom | od -An -t x | tr -d ' '"
+  register: kube_token_output
+  no_log: true
+  when: not token_file.stat.exists
+
+- name: Set token fact
+  set_fact:
+    kube_token: "{{ kube_token_output.stdout }}"
+  no_log: true
+  when: not token_file.stat.exists
+
+- name: Save token
+  copy:
+    content: "{{ kube_token }}"
+    dest: "{{ caas.cert_path }}/{{ caas.token_filename }}"
+  when: not token_file.stat.exists
+
+- name: Set permissions on token
+  acl:
+    name:  "{{ caas.cert_path }}/{{ caas.token_filename }}"
+    entity: "{{ item }}"
+    etype: user
+    permissions: r
+    state: present
+  when: not token_file.stat.exists
+  with_items:
+    - "{{ users.admin_user_name }}"
+    - "kube"
+
+- name: Generate tokens.csv
+  template:
+    src: "tokens.csv"
+    dest: "{{ caas.cert_path }}/{{ caas.tokenscsv_filename }}"
+    mode: 0000
+  when: not token_file.stat.exists
+
+- name: Set permissions on tokens.csv
+  acl:
+    name:  "{{ caas.cert_path }}/{{ caas.tokenscsv_filename }}"
+    entity: "{{ item }}"
+    etype: user
+    permissions: r
+    state: present
+  when: not token_file.stat.exists
+  with_items:
+    - "{{ users.admin_user_name }}"
+    - "kube"

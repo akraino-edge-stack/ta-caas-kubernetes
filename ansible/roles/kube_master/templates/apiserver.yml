@@ -1,0 +1,63 @@
+{#
+Copyright 2019 Nokia
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+#}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kube-apiserver
+  namespace: kube-system
+spec:
+  hostNetwork: true
+  containers:
+    - name: kube-apiserver
+      image: {{ container_image_names | select('search', '/hyperkube') | list | last }}
+      securityContext:
+        runAsUser: {{ caas.uid.kube }}
+      command:
+        - "/kube-apiserver"
+        {{ apiserver_params | to_nice_yaml | indent(8) }}
+      volumeMounts:
+        - name: secret-kubernetes
+          mountPath: /etc/kubernetes/ssl
+          readOnly: true
+        - name: secret-root-ca
+          mountPath: /etc/openssl/ca.pem
+          readOnly: true
+        - name: secret-etcd
+          mountPath: /etc/etcd/ssl
+          readOnly: true
+        - name: audit-kube-apiserver
+          mountPath: /var/log/audit/kube_apiserver/
+          readOnly: false
+        - name: audit-policy-dir
+          mountPath: {{ caas.caas_policy_directory }}
+          readOnly: true
+  volumes:
+    - name: secret-kubernetes
+      hostPath:
+        path: /etc/kubernetes/ssl
+    - name: secret-root-ca
+      hostPath:
+        path: /etc/openssl/ca.pem
+    - name: secret-etcd
+      hostPath:
+        path: /etc/etcd/ssl
+    - name: audit-kube-apiserver
+      hostPath:
+        path: /var/log/audit/kube_apiserver/
+    - name: audit-policy-dir
+      hostPath:
+        path: {{ caas.caas_policy_directory }}

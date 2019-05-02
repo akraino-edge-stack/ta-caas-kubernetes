@@ -1,0 +1,83 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiserver_admission_controllers:
+  - DefaultStorageClass
+  - LimitRanger
+  - MutatingAdmissionWebhook
+  - NamespaceExists
+  - NamespaceLifecycle
+  - NodeRestriction
+  - PodSecurityPolicy
+  - ResourceQuota
+  - ServiceAccount
+  - ValidatingAdmissionWebhook
+
+apiserver_feature_gates:
+  CPUManager: false
+  DevicePlugins: true
+  HugePages: true
+  TokenRequest: true
+
+apiserver_params:
+  - "--admission-control={{ apiserver_admission_controllers | join(',') }}"
+  - "--advertise-address={{ apiserver }}"
+  - "--allow-privileged=true"
+  - "--anonymous-auth=false"
+  - "--apiserver-count={{ groups['caas_master']|length|int }}"
+  - "--audit-policy-file={{ caas.caas_policy_directory }}/audit-policy.yaml"
+  - "--audit-log-format=json"
+  - "--audit-log-maxbackup=10"
+  - "--audit-log-maxsize=100"
+  - "--audit-log-path=/var/log/audit/kube_apiserver/kube-apiserver-audit.log"
+  - "--authorization-mode=Node,RBAC"
+  - "--bind-address={{ apiserver }}"
+  - "--client-ca-file=/etc/openssl/ca.pem"
+  - "--enable-bootstrap-token-auth=true"
+  - "--etcd-cafile=/etc/etcd/ssl/ca.pem"
+  - "--etcd-certfile=/etc/etcd/ssl/etcd{{ nodeindex }}.pem"
+  - "--etcd-keyfile=/etc/etcd/ssl/etcd{{ nodeindex }}-key.pem"
+  - "--etcd-servers={% for host in groups['caas_master'] %}https://{{ hostvars[host]['networking']['infra_internal']['ip'] }}:{{ caas.etcd_api_port }}{% if not loop.last %},{% endif %}{% endfor %}"
+  - "--experimental-encryption-provider-config={{ caas.cert_path }}/{{ caas._secrets_conf }}"
+  - "--feature-gates={{ apiserver_feature_gates | get_kube_options }}"
+  - "--insecure-port=0"
+  - "--kubelet-certificate-authority=/etc/openssl/ca.pem"
+  - "--kubelet-client-certificate=/etc/kubernetes/ssl/kubelet-server.pem"
+  - "--kubelet-client-key=/etc/kubernetes/ssl/kubelet-server-key.pem"
+  - "--kubelet-https=true"
+  - "--max-requests-inflight=1000"
+  - "--proxy-client-cert-file=/etc/kubernetes/ssl/metrics.crt"
+  - "--proxy-client-key-file=/etc/kubernetes/ssl/metrics.key"
+  - "--requestheader-client-ca-file=/etc/openssl/ca.pem"
+  - "--requestheader-extra-headers-prefix=X-Remote-Extra-"
+  - "--requestheader-group-headers=X-Remote-Group"
+  - "--requestheader-username-headers=X-Remote-User"
+  - "--secure-port={{ apiserver_port }}"
+  - "--service-account-key-file=/etc/kubernetes/ssl/service-account.pem"
+  - "--service-account-lookup=true"
+  - "--service-cluster-ip-range={{ caas.service_cluster_ip_cidr }}"
+  - "--tls-cert-file=/etc/kubernetes/ssl/tls-cert.pem"
+  - "--tls-private-key-file=/etc/kubernetes/ssl/apiserver{{ nodeindex }}-key.pem"
+  - "--token-auth-file={{ caas.cert_path }}/{{ caas.tokenscsv_filename }}"
+
+controllermanager_feature_gates:
+  CPUManager: false
+  DevicePlugins: true
+  HugePages: true
+
+scheduler_feature_gates:
+  CPUManager: false
+  DevicePlugins: true
+  HugePages: true

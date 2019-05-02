@@ -1,0 +1,68 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- name: create directory
+  file:
+    name: "{{ config.path | dirname }}"
+    state: directory
+    mode: 0755
+    owner: "{{ config.owner | default('root') }}"
+    group: "{{ config.group | default('root') }}"
+
+- name: create kubeconfig
+  command: "/usr/bin/kubectl config {{ cmd }} --kubeconfig={{ config.path }}"
+  with_items:
+    - "set-cluster kubernetes --certificate-authority=/etc/openssl/ca.pem --embed-certs=true --server=https://{{ config.apiserver }}:{{ config.apiserver_port }}"
+    - "set-context default --cluster=kubernetes --user={{ config.user }}"
+    - "use-context default"
+  loop_control:
+    loop_var: cmd
+
+- name: set user auth with token
+  command: "/usr/bin/kubectl config set-credentials {{ config.user }} --token={{ config.token }} --kubeconfig={{ config.path }}"
+  when: config.token is defined and config.token
+
+- name: set user auth with certs
+  command: "/usr/bin/kubectl config set-credentials {{ config.user }} --client-certificate={{ config.cert }} --client-key={{ config.key }} --embed-certs=true --kubeconfig={{ config.path }}"
+  when: not (config.token is defined and config.token)
+
+- name: changing permissions of kubeconfig
+  file:
+    path: "{{ config.path }}"
+    mode: "{{ config.restricted | default(true) | ternary('0640', '0644') }}"
+    owner: "{{ config.owner | default('root') }}"
+    group: "{{ config.group | default('root') }}"
+
+- name: allowing users to access kubeconfig
+  acl:
+    name: "{{ config.path }}"
+    entity: "{{ user }}"
+    etype: user
+    permissions: "r"
+    state: present
+  with_items: "{{ config.add_users | default([]) }}"
+  loop_control:
+    loop_var: user
+
+- name: adding read permission to kubeconfig dir
+  acl:
+    name: "{{ config.path | dirname }}"
+    entity: "{{ user }}"
+    etype: user
+    permissions: "rx"
+    state: present
+  with_items: "{{ config.add_users | default([]) }}"
+  loop_control:
+    loop_var: user

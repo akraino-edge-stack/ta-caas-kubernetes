@@ -1,0 +1,68 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- name: template master kubelet config
+  template:
+    src: master-config.yaml.j2
+    dest: /etc/kubernetes/kubeconfig/master-config.yaml
+    mode: 0600
+  when: hostname in groups.caas_master
+  become_user: "root"
+
+- name: template worker kubelet config
+  template:
+    src: worker-config.yaml.j2
+    dest: /etc/kubernetes/kubeconfig/worker-config.yaml
+    mode: 0600
+  when: hostname in groups.caas_worker
+  become_user: "root"
+
+- name: assemble kubelet params for master
+  set_fact:
+    kubelet_params: "{{ common_kubelet_params + master_kubelet_params | default([], true) }}"
+  when: hostname in groups.caas_master
+
+- name: assemble kubelet params for worker
+  set_fact:
+    kubelet_params: "{{ common_kubelet_params + worker_kubelet_params | default([], true) }}"
+  when: hostname in groups.caas_worker
+
+- name: template kubelet scripts
+  template:
+    src: "{{ item }}"
+    dest: /usr/libexec/nokia/{{ item }}
+    mode: 0700
+  with_items:
+    - kubelet_start.sh
+    - kubelet_healthcheck.sh
+    - kubelet_stop.sh
+  become_user: "root"
+
+- name: template service file
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - src: kubelet.service
+      dest: /usr/lib/systemd/system/kubelet.service
+    - src: kubelet_healthcheck.service
+      dest: /usr/lib/systemd/system/kubelet_healthcheck.service
+
+- name: create dummy kubeletc file for boostrapper nodes
+  file:
+    path: "/etc/kubernetes/kubeconfig/kubeletc.yml"
+    state: touch
+  when: hostname in groups.caas_worker
+

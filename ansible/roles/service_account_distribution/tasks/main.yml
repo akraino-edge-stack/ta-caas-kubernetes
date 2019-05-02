@@ -1,0 +1,56 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- name: adding acl read to write cert_path
+  acl:
+    name:  "{{ caas.cert_path }}"
+    entity: "{{ users.admin_user_name }}"
+    etype: user
+    permissions: rwx
+    state: present
+  when: not nodename | search("caas_master1")
+  become_user: "root"
+
+# Service account distribution
+- name: Get service-account key from caas_master1
+  shell: 'rsync -a -e "ssh -o StrictHostKeyChecking=no" {{ users.admin_user_name }}@{{ groups.caas_master[0] }}:{{ caas.cert_path }}/{{ item }} {{ caas.cert_path }}/'
+  become_user: "{{ users.admin_user_name }}"
+  with_items:
+    - "{{ _key }}"
+    - "{{ _cert }}"
+  when: not nodename | search("caas_master1")
+
+- name: allowing users to access keys
+  acl:
+    name: "{{ item[0] }}"
+    entity: "{{ item[1] }}"
+    etype: user
+    permissions: "r"
+    state: present
+  with_nested:
+    - [ "{{ caas.cert_path }}/{{ _key }}", "{{ caas.cert_path }}/{{ _cert }}" ]
+    - "{{ add_users | default([]) }}"
+  when: not nodename | search("caas_master1")
+
+- name: removing write permission from cert_path
+  acl:
+    name:  "{{ caas.cert_path }}"
+    entity: "{{ users.admin_user_name }}"
+    etype: user
+    permissions: rx
+    state: present
+  when: not nodename | search("caas_master1")
+  become_user: "root"
+

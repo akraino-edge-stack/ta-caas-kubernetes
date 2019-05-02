@@ -1,0 +1,104 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+dependencies:
+  - role: kube_token_reading
+    when: nodename | search("caas_worker")
+
+  - role: creategroup
+    _name: kube
+    _gid: "{{ caas.uid.kube }}"
+    become: true
+    become_user: "root"
+
+  - role: createuser
+    _name: kube
+    _group: kube
+    _groups: ''
+    _shell: /sbin/nologin
+    _home: /
+    _uid: "{{ caas.uid.kube }}"
+    become: true
+    become_user: "root"
+
+  # kubelet server certs
+  - role: cert
+    instance: "kubelet{{ nodeindex }}"
+    cert_path: /etc/kubernetes/ssl
+    common_name: "system:node:{{ ansible_host }}"
+    org_name: "system:nodes"
+    add_users:
+      - kube
+    kube_conf:
+      - path: /etc/kubernetes/kubeconfig/kubeletc.yml
+        apiserver: "{{ caas.apiserver_svc_ip }}"
+        apiserver_port: "{{ caas.apiserver_svc_port }}"
+        restricted: true
+    become: true
+    become_user: "root"
+    when: nodename | search("caas_master")
+  - role: kubeconfig
+    config:
+      path: /etc/kubernetes/kubeconfig/kubelet-bootstrapc.yml
+      owner: "root"
+      group: "root"
+      restricted: true
+      user: "system:node:{{ ansible_host }}"
+      token: "{{ kube_token }}"
+      apiserver: "{{ caas.apiserver_in_hosts }}"
+      apiserver_port: "{{ caas.apiserver_secure_port }}"
+      add_users:
+        - kube
+    become: true
+    become_user: "root"
+    when: nodename | search("caas_worker")
+  # kubelet server cert
+  - role: cert
+    instance: "kubelet-server"
+    cert_path: /etc/kubernetes/ssl
+    common_name: "kubelet-server"
+    alt_names:
+      ip:
+        - "{{ ansible_host }}"
+    add_users:
+      - kube
+  # kubectl cert
+  - role: cert
+    instance: "kube-admin"
+    cert_path: /etc/kubernetes/ssl
+    common_name: "kube-admin"
+    org_name: "system:masters"
+    kube_conf:
+      - path: "/root/.kube/config"
+        apiserver: "{{ caas.apiserver_svc_ip }}"
+        apiserver_port: "{{ caas.apiserver_svc_port }}"
+    become: true
+    become_user: "root"
+  # danm cert
+  - role: cert
+    instance: "danm"
+    cert_path: /etc/kubernetes/ssl
+    common_name: "danm"
+    kube_conf:
+      - path: "/etc/kubernetes/kubeconfig/danmc.yml"
+        apiserver: "{{ caas.apiserver_svc_ip }}"
+        apiserver_port: "{{ caas.apiserver_svc_port }}"
+    become: true
+    become_user: "root"
+
+  - role: docker_image_load
+    images:
+      - hyperkube
+      - kubernetespause

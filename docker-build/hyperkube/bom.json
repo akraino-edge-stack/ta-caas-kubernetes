@@ -1,0 +1,1372 @@
+{
+  "bom": [
+    {
+      "name": "centos-linux-container",
+      "version": "7.6.1810",
+      "source-url": "https://github.com/CentOS/sig-cloud-instance-images/archive/7c2e214edced0b2f22e663ab4175a80fc93acaa9.tar.gz",
+      "foss": "yes"
+    },
+    {
+      "name": "acl.x86_64",
+      "version": "2.2.51-14.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/os/Source/SPackages/acl-2.2.51-14.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "audit-libs.x86_64",
+      "version": "2.8.4-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/audit-2.8.4-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "basesystem.noarch",
+      "version": "10.0-7.el7.centos",
+      "source-url": "http://purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/os/Source/SPackages/basesystem-10.0-7.el7.centos.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "bash.x86_64",
+      "version": "4.2.46-31.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/bash-4.2.46-31.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "binutils.x86_64",
+      "version": "2.27-34.base.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/binutils-2.27-34.base.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "bzip2.x86_64",
+      "version": "1.0.6-13.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/bzip2-1.0.6-13.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "bzip2-libs.x86_64",
+      "version": "1.0.6-13.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/bzip2-1.0.6-13.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "ca-certificates.noarch",
+      "version": "2018.2.22-70.0.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/ca-certificates-2018.2.22-70.0.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "centos-release.x86_64",
+      "version": "7-6.1810.2.el7.centos",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/centos-release-7-6.1810.2.el7.centos.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "ceph-common.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "chkconfig.x86_64",
+      "version": "1.7.4-1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/chkconfig-1.7.4-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "conntrack-tools.x86_64",
+      "version": "1.4.4-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/conntrack-tools-1.4.4-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "coreutils.x86_64",
+      "version": "8.22-23.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/coreutils-8.22-23.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "cpio.x86_64",
+      "version": "2.11-27.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/cpio-2.11-27.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "cracklib.x86_64",
+      "version": "2.9.0-11.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/cracklib-2.9.0-11.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "cracklib-dicts.x86_64",
+      "version": "2.9.0-11.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/cracklib-2.9.0-11.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "cryptsetup-libs.x86_64",
+      "version": "2.0.3-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/cryptsetup-2.0.3-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "curl.x86_64",
+      "version": "7.29.0-51.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/curl-7.29.0-51.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "cyrus-sasl-lib.x86_64",
+      "version": "2.1.26-23.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/cyrus-sasl-2.1.26-23.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "dbus.x86_64",
+      "version": "1:1.10.24-12.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/dbus-1.10.24-12.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "dbus-libs.x86_64",
+      "version": "1:1.10.24-12.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/dbus-1.10.24-12.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "device-mapper.x86_64",
+      "version": "7:1.02.149-8.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/lvm2-2.02.180-8.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "device-mapper-libs.x86_64",
+      "version": "7:1.02.149-8.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/lvm2-2.02.180-8.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "diffutils.x86_64",
+      "version": "3.3-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/diffutils-3.3-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "dracut.x86_64",
+      "version": "033-554.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/dracut-033-554.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "e2fsprogs.x86_64",
+      "version": "1.42.9-13.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/e2fsprogs-1.42.9-13.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "e2fsprogs-libs.x86_64",
+      "version": "1.42.9-13.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/e2fsprogs-1.42.9-13.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "elfutils-default-yama-scope.noarch",
+      "version": "0.172-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/elfutils-0.172-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "elfutils-libelf.x86_64",
+      "version": "0.172-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/elfutils-0.172-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "elfutils-libs.x86_64",
+      "version": "0.172-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/elfutils-0.172-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "expat.x86_64",
+      "version": "2.1.0-10.el7_3",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/expat-2.1.0-10.el7_3.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "file.x86_64",
+      "version": "5.11-35.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/file-5.11-35.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "file-libs.x86_64",
+      "version": "5.11-35.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/file-5.11-35.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "filesystem.x86_64",
+      "version": "3.2-25.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/filesystem-3.2-25.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "findutils.x86_64",
+      "version": "1:4.5.11-6.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/findutils-4.5.11-6.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "fuse-libs.x86_64",
+      "version": "2.9.2-11.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/fuse-2.9.2-11.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "gawk.x86_64",
+      "version": "4.0.2-4.el7_3.1",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gawk-4.0.2-4.el7_3.1.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "gdbm.x86_64",
+      "version": "1.10-8.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gdbm-1.10-8.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "glib2.x86_64",
+      "version": "2.56.1-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/glib2-2.56.1-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "glibc.x86_64",
+      "version": "2.17-260.el7_6.3",
+      "source-url": "vault.centos.org/7.6.1810/updates/Source/SPackages/glibc-2.17-260.el7_6.3.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "glibc-common.x86_64",
+      "version": "2.17-260.el7_6.3",
+      "source-url": "vault.centos.org/7.6.1810/updates/Source/SPackages/glibc-2.17-260.el7_6.3.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "gmp.x86_64",
+      "version": "1:6.0.0-15.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gmp-6.0.0-15.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "gnupg2.x86_64",
+      "version": "2.0.22-5.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gnupg2-2.0.22-5.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "gperftools-libs.x86_64",
+      "version": "2.6.1-1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gperftools-2.6.1-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "gpgme.x86_64",
+      "version": "1.3.2-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gpgme-1.3.2-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "grep.x86_64",
+      "version": "2.20-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/grep-2.20-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "groff-base.x86_64",
+      "version": "1.22.2-8.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/groff-1.22.2-8.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "gzip.x86_64",
+      "version": "1.5-10.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gzip-1.5-10.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "hardlink.x86_64",
+      "version": "1:1.0-19.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/hardlink-1.0-19.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "hostname.x86_64",
+      "version": "3.13-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/hostname-3.13-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "hwdata.x86_64",
+      "version": "0.252-9.1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/hwdata-0.252-9.1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "info.x86_64",
+      "version": "5.1-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/texinfo-5.1-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "initscripts.x86_64",
+      "version": "9.49.46-1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/initscripts-9.49.46-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "iproute.x86_64",
+      "version": "4.11.0-14.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/iproute-4.11.0-14.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "iptables.x86_64",
+      "version": "1.4.21-28.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/iptables-1.4.21-28.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "iputils.x86_64",
+      "version": "20160308-10.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/iputils-20160308-10.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "json-c.x86_64",
+      "version": "0.11-4.el7_0",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/json-c-0.11-4.el7_0.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "keyutils-libs.x86_64",
+      "version": "1.5.8-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/keyutils-1.5.8-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "kmod.x86_64",
+      "version": "20-23.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/kmod-20-23.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "kmod-libs.x86_64",
+      "version": "20-23.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/kmod-20-23.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "kpartx.x86_64",
+      "version": "0.4.9-123.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/device-mapper-multipath-0.4.9-123.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "krb5-libs.x86_64",
+      "version": "1.15.1-34.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/krb5-1.15.1-34.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "leveldb.x86_64",
+      "version": "1.12.0-11.el7",
+      "source-url": "download-ib01.fedoraproject.org/pub/epel/7/SRPMS/Packages/l/leveldb-1.12.0-11.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libacl.x86_64",
+      "version": "2.2.51-14.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/acl-2.2.51-14.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libaio.x86_64",
+      "version": "0.3.109-13.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libaio-0.3.109-13.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libassuan.x86_64",
+      "version": "2.1.0-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libassuan-2.1.0-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libattr.x86_64",
+      "version": "2.4.46-13.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/attr-2.4.46-13.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libbabeltrace.x86_64",
+      "version": "1.2.4-3.1.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/babeltrace-1.2.4-3.1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libblkid.x86_64",
+      "version": "2.23.2-59.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/util-linux-2.23.2-59.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libcap.x86_64",
+      "version": "2.22-9.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libcap-2.22-9.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libcap-ng.x86_64",
+      "version": "0.7.5-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libcap-ng-0.7.5-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libcephfs2.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libcom_err.x86_64",
+      "version": "1.42.9-13.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/e2fsprogs-1.42.9-13.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libcurl.x86_64",
+      "version": "7.29.0-51.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/curl-7.29.0-51.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libdb.x86_64",
+      "version": "5.3.21-24.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libdb-5.3.21-24.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libdb-utils.x86_64",
+      "version": "5.3.21-24.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libdb-5.3.21-24.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libffi.x86_64",
+      "version": "3.0.13-18.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libffi-3.0.13-18.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libgcc.x86_64",
+      "version": "4.8.5-36.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gcc-4.8.5-36.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libgcrypt.x86_64",
+      "version": "1.5.3-14.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libgcrypt-1.5.3-14.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libgpg-error.x86_64",
+      "version": "1.12-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libgpg-error-1.12-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libibverbs.x86_64",
+      "version": "17.2-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/rdma-core-17.2-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libidn.x86_64",
+      "version": "1.28-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libidn-1.28-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libmnl.x86_64",
+      "version": "1.0.3-7.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libmnl-1.0.3-7.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libmount.x86_64",
+      "version": "2.23.2-59.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/util-linux-2.23.2-59.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libnetfilter_conntrack.x86_64",
+      "version": "1.0.6-1.el7_3",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libnetfilter_conntrack-1.0.6-1.el7_3.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libnetfilter_cthelper.x86_64",
+      "version": "1.0.0-9.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libnetfilter_cthelper-1.0.0-9.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libnetfilter_cttimeout.x86_64",
+      "version": "1.0.0-6.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libnetfilter_cttimeout-1.0.0-6.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libnetfilter_queue.x86_64",
+      "version": "1.0.2-2.el7_2",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libnetfilter_queue-1.0.2-2.el7_2.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libnfnetlink.x86_64",
+      "version": "1.0.1-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libnfnetlink-1.0.1-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libnl3.x86_64",
+      "version": "3.2.28-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libnl3-3.2.28-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libpwquality.x86_64",
+      "version": "1.2.3-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libpwquality-1.2.3-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "librados2.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libradosstriper1.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "librbd1.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "librgw2.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libselinux.x86_64",
+      "version": "2.5-14.1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libselinux-2.5-14.1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libsemanage.x86_64",
+      "version": "2.5-14.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libsemanage-2.5-14.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libsepol.x86_64",
+      "version": "2.5-10.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libsepol-2.5-10.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libsmartcols.x86_64",
+      "version": "2.23.2-59.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/util-linux-2.23.2-59.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libss.x86_64",
+      "version": "1.42.9-13.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/e2fsprogs-1.42.9-13.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libssh2.x86_64",
+      "version": "1.4.3-12.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libssh2-1.4.3-12.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libstdc++.x86_64",
+      "version": "4.8.5-36.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/gcc-4.8.5-36.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libtasn1.x86_64",
+      "version": "4.10-1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libtasn1-4.10-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libuser.x86_64",
+      "version": "0.60-9.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libuser-0.60-9.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libutempter.x86_64",
+      "version": "1.1.6-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libutempter-1.1.6-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libuuid.x86_64",
+      "version": "2.23.2-59.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/util-linux-2.23.2-59.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libverto.x86_64",
+      "version": "0.2.5-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libverto-0.2.5-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libxml2.x86_64",
+      "version": "2.9.1-6.el7_2.3",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libxml2-2.9.1-6.el7_2.3.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "libxml2-python.x86_64",
+      "version": "2.9.1-6.el7_2.3",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/libxml2-2.9.1-6.el7_2.3.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "lttng-ust.x86_64",
+      "version": "2.10.0-1.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/lttng-ust-2.10.0-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "lua.x86_64",
+      "version": "5.1.4-15.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/lua-5.1.4-15.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "lz4.x86_64",
+      "version": "1.7.5-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/lz4-1.7.5-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "ncurses.x86_64",
+      "version": "5.9-14.20130511.el7_4",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/ncurses-5.9-14.20130511.el7_4.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "ncurses-base.noarch",
+      "version": "5.9-14.20130511.el7_4",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/ncurses-5.9-14.20130511.el7_4.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "ncurses-libs.x86_64",
+      "version": "5.9-14.20130511.el7_4",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/ncurses-5.9-14.20130511.el7_4.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "nspr.x86_64",
+      "version": "4.19.0-1.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/nspr-4.19.0-1.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "nss.x86_64",
+      "version": "3.36.0-7.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/nss-3.36.0-7.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "nss-pem.x86_64",
+      "version": "1.0.3-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/nss-pem-1.0.3-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "nss-softokn.x86_64",
+      "version": "3.36.0-5.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/nss-softokn-3.36.0-5.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "nss-softokn-freebl.x86_64",
+      "version": "3.36.0-5.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/nss-softokn-3.36.0-5.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "nss-sysinit.x86_64",
+      "version": "3.36.0-7.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/nss-softokn-3.36.0-5.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "nss-tools.x86_64",
+      "version": "3.36.0-7.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/nss-softokn-3.36.0-5.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "nss-util.x86_64",
+      "version": "3.36.0-1.el7_5",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/nss-softokn-3.36.0-5.el7_5.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "openldap.x86_64",
+      "version": "2.4.44-20.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/openldap-2.4.44-20.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "openssl-libs.x86_64",
+      "version": "1:1.0.2k-16.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/openssl-1.0.2k-16.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "p11-kit.x86_64",
+      "version": "0.23.5-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/p11-kit-0.23.5-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "p11-kit-trust.x86_64",
+      "version": "0.23.5-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/p11-kit-0.23.5-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pam.x86_64",
+      "version": "1.1.8-22.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pam-1.1.8-22.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "passwd.x86_64",
+      "version": "0.79-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/passwd-0.79-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pciutils.x86_64",
+      "version": "3.5.1-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pciutils-3.5.1-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pciutils-libs.x86_64",
+      "version": "3.5.1-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pciutils-3.5.1-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pcre.x86_64",
+      "version": "8.32-17.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pcre-8.32-17.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl.x86_64",
+      "version": "4:5.16.3-294.el7_6",
+      "source-url": "vault.centos.org/7.6.1810/updates/Source/SPackages/perl-5.16.3-294.el7_6.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Carp.noarch",
+      "version": "1.26-244.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Carp-1.26-244.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Encode.x86_64",
+      "version": "2.51-7.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Encode-2.51-7.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Exporter.noarch",
+      "version": "5.68-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Exporter-5.68-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-File-Path.noarch",
+      "version": "2.09-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-File-Path-2.09-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-File-Temp.noarch",
+      "version": "0.23.01-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-File-Temp-0.23.01-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Filter.x86_64",
+      "version": "1.49-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Filter-1.49-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Getopt-Long.noarch",
+      "version": "2.40-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Getopt-Long-2.40-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-HTTP-Tiny.noarch",
+      "version": "0.033-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-HTTP-Tiny-0.033-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-PathTools.x86_64",
+      "version": "3.40-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-PathTools-3.40-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Pod-Escapes.noarch",
+      "version": "1:1.04-294.el7_6",
+      "source-url": "vault.centos.org/7.6.1810/updates/Source/SPackages/perl-5.16.3-294.el7_6.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Pod-Perldoc.noarch",
+      "version": "3.20-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Pod-Perldoc-3.20-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Pod-Simple.noarch",
+      "version": "1:3.28-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Pod-Simple-3.28-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Pod-Usage.noarch",
+      "version": "1.63-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Pod-Usage-1.63-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Scalar-List-Utils.x86_64",
+      "version": "1.27-248.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Scalar-List-Utils-1.27-248.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Socket.x86_64",
+      "version": "2.010-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Socket-2.010-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Storable.x86_64",
+      "version": "2.45-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Storable-2.45-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Text-ParseWords.noarch",
+      "version": "3.29-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Text-ParseWords-3.29-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Time-HiRes.x86_64",
+      "version": "4:1.9725-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Time-HiRes-1.9725-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-Time-Local.noarch",
+      "version": "1.2300-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-Time-Local-1.2300-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-constant.noarch",
+      "version": "1.27-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-constant-1.27-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-libs.x86_64",
+      "version": "4:5.16.3-294.el7_6",
+      "source-url": "vault.centos.org/7.6.1810/updates/Source/SPackages/perl-5.16.3-294.el7_6.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-macros.x86_64",
+      "version": "4:5.16.3-294.el7_6",
+      "source-url": "vault.centos.org/7.6.1810/updates/Source/SPackages/perl-5.16.3-294.el7_6.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-parent.noarch",
+      "version": "1:0.225-244.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-parent-0.225-244.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-podlators.noarch",
+      "version": "2.5.1-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-podlators-2.5.1-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-threads.x86_64",
+      "version": "1.87-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-threads-1.87-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "perl-threads-shared.x86_64",
+      "version": "1.43-6.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/perl-threads-shared-1.43-6.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pinentry.x86_64",
+      "version": "0.8.1-17.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pinentry-0.8.1-17.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pkgconfig.x86_64",
+      "version": "1:0.27.1-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pkgconfig-0.27.1-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "popt.x86_64",
+      "version": "1.13-16.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/popt-1.13-16.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "procps-ng.x86_64",
+      "version": "3.3.10-23.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/procps-ng-3.3.10-23.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pth.x86_64",
+      "version": "2.0.7-23.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pth-2.0.7-23.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pygpgme.x86_64",
+      "version": "0.3-9.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pygpgme-0.3-9.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pyliblzma.x86_64",
+      "version": "0.5.3-11.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pyliblzma-0.5.3-11.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python.x86_64",
+      "version": "2.7.5-76.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-2.7.5-76.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-backports.x86_64",
+      "version": "1.0-8.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-backports-1.0-8.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-backports-ssl_match_hostname.noarch",
+      "version": "3.5.0.1-1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-backports-ssl_match_hostname-3.5.0.1-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-cephfs.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-chardet.noarch",
+      "version": "2.2.1-1.el7_1",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-chardet-2.2.1-1.el7_1.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-iniparse.noarch",
+      "version": "0.4-9.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-iniparse-0.4-9.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-ipaddress.noarch",
+      "version": "1.0.16-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-ipaddress-1.0.16-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-kitchen.noarch",
+      "version": "1.1.1-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-kitchen-1.1.1-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-libs.x86_64",
+      "version": "2.7.5-76.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-2.7.5-76.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-meld3.x86_64",
+      "version": "0.6.10-1.el7",
+      "source-url": "download-ib01.fedoraproject.org/pub/epel/7/SRPMS/Packages/p/python-meld3-0.6.10-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-prettytable.noarch",
+      "version": "0.7.2-3.el7",
+      "source-url": "forensics.cert.org/centos/cert/7/SRPMS/python-prettytable-0.7.2-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-pycurl.x86_64",
+      "version": "7.19.0-19.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-pycurl-7.19.0-19.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-rados.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-rbd.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-requests.noarch",
+      "version": "2.6.0-1.el7_1",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-requests-2.6.0-1.el7_1.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-rgw.x86_64",
+      "version": "2:12.2.5-0.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/ceph-12.2.5-0.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-setuptools.noarch",
+      "version": "0.9.8-7.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-setuptools-0.9.8-7.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-six.noarch",
+      "version": "1.9.0-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-six-1.9.0-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-urlgrabber.noarch",
+      "version": "3.10-9.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-urlgrabber-3.10-9.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "python-urllib3.noarch",
+      "version": "1.10.2-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/python-urllib3-1.10.2-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "pyxattr.x86_64",
+      "version": "0.5.1-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/pyxattr-0.5.1-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "qrencode-libs.x86_64",
+      "version": "3.4.1-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/qrencode-3.4.1-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "rdma-core.x86_64",
+      "version": "17.2-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/rdma-core-17.2-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "readline.x86_64",
+      "version": "6.2-10.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/readline-6.2-10.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "rootfiles.noarch",
+      "version": "8.1-11.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/rootfiles-8.1-11.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "rpm.x86_64",
+      "version": "4.11.3-35.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/rpm-4.11.3-35.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "rpm-build-libs.x86_64",
+      "version": "4.11.3-35.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/rpm-4.11.3-35.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "rpm-libs.x86_64",
+      "version": "4.11.3-35.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/rpm-4.11.3-35.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "rpm-python.x86_64",
+      "version": "4.11.3-35.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/rpm-4.11.3-35.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "rsync.x86_64",
+      "version": "3.1.2-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/rsync-3.1.2-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "sed.x86_64",
+      "version": "4.2.2-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/sed-4.2.2-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "setup.noarch",
+      "version": "2.8.71-10.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/setup-2.8.71-10.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "shadow-utils.x86_64",
+      "version": "2:4.1.5.1-25.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/shadow-utils-4.1.5.1-25.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "shared-mime-info.x86_64",
+      "version": "1.8-4.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/shared-mime-info-1.8-4.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "snappy.x86_64",
+      "version": "1.1.0-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/snappy-1.1.0-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "socat.x86_64",
+      "version": "1.7.3.2-2.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/socat-1.7.3.2-2.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "sqlite.x86_64",
+      "version": "3.7.17-8.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/sqlite-3.7.17-8.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "supervisor.noarch",
+      "version": "3.1.4-1.el7",
+      "source-url": "download-ib01.fedoraproject.org/pub/epel/7/SRPMS/Packages/s/supervisor-3.1.4-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "systemd.x86_64",
+      "version": "219-62.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/systemd-219-62.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "systemd-libs.x86_64",
+      "version": "219-62.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/systemd-219-62.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "sysvinit-tools.x86_64",
+      "version": "2.88-14.dsf.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/sysvinit-2.88-14.dsf.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "tar.x86_64",
+      "version": "2:1.26-35.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/tar-1.26-35.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "tcp_wrappers-libs.x86_64",
+      "version": "7.6-77.el7",
+      "source-url": "http://vault.centos.org/7.6.1810/os/Source/SPackages/tcp_wrappers-7.6-77.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "tzdata.noarch",
+      "version": "2018e-3.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/tzdata-2018e-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "userspace-rcu.x86_64",
+      "version": "0.10.0-3.el7",
+      "source-url": "purkki.dynamic.nsn-net.net/mirrors/centos/snapshot/20181003/7/storage/Source/ceph-luminous/userspace-rcu-0.10.0-3.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "ustr.x86_64",
+      "version": "1.0.4-16.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/ustr-1.0.4-16.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "util-linux.x86_64",
+      "version": "2.23.2-59.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/util-linux-2.23.2-59.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "vim-minimal.x86_64",
+      "version": "2:7.4.160-5.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/vim-7.4.160-5.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "xz.x86_64",
+      "version": "5.2.2-1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/xz-5.2.2-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "xz-libs.x86_64",
+      "version": "5.2.2-1.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/xz-5.2.2-1.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "yum.noarch",
+      "version": "3.4.3-161.el7.centos",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/yum-3.4.3-161.el7.centos.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "yum-metadata-parser.x86_64",
+      "version": "1.1.4-10.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/yum-metadata-parser-1.1.4-10.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "yum-plugin-fastestmirror.noarch",
+      "version": "1.1.31-50.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/yum-utils-1.1.31-50.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "yum-plugin-ovl.noarch",
+      "version": "1.1.31-50.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/yum-utils-1.1.31-50.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "yum-utils.noarch",
+      "version": "1.1.31-50.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/yum-utils-1.1.31-50.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "zlib.x86_64",
+      "version": "1.2.7-18.el7",
+      "source-url": "vault.centos.org/7.6.1810/os/Source/SPackages/zlib-1.2.7-18.el7.src.rpm",
+      "foss": "yes"
+    },
+    {
+      "name": "kubernetes",
+      "version": "1.13.3",
+      "source-url": "https://github.com/kubernetes/kubernetes/archive/v1.13.3.tar.gz",
+      "foss": "yes"
+    },
+    {
+      "name": "cni",
+      "version": "0.7.0",
+      "source-url": "https://github.com/containernetworking/plugins/archive/v0.7.0.tar.gz",
+      "foss": "yes"
+    },
+    {
+      "name": "sriov-cni",
+      "version": "0.2",
+      "source-url": "https://github.com/intel/sriov-cni/archive/v0.2.tar.gz",
+      "foss": "yes"
+    },
+    {
+      "name": "danm",
+      "version": "3.0.0",
+      "source-url": "https://github.com/nokia/danm/archive/v3.0.0.tar.gz",
+      "foss": "yes"
+    },
+    {
+      "name": "go",
+      "version": "1.10.3",
+      "source-url": "https://github.com/golang/go/archive/go1.10.3.tar.gz",
+      "foss": "yes"
+    }
+  ]
+}
