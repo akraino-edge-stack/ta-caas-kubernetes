@@ -30,6 +30,7 @@ RUN useradd -u 144 -M -s /sbin/nologin kube \
 &&  yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
 &&  yum install -y --setopt=skip_missing_names_on_install=False \
       ${ceph_packages} \
+      conntrack-tools \
 \
 # Install kubernetes
 &&  chmod a+x /kube-apiserver \
