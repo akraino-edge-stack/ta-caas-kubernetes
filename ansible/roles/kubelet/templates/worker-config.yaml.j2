@@ -31,7 +31,7 @@ cgroupRoot: "/"
 cgroupDriver: cgroupfs
 clusterDNS:
 - {{ caas.dns_svc_ip }}
-clusterDomain: nokia.net
+clusterDomain: {{ caas.dns_domain }}
 staticPodPath: "/etc/kubernetes/manifests"
 rotateCertificates: true
 runtimeRequestTimeout: 5m0s

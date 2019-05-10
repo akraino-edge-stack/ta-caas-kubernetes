@@ -88,7 +88,7 @@ dependencies:
     cert_path: /etc/kubernetes/ssl
     alt_names:
       dns:
-        - custom-metrics-apiserver.kube-system.svc.nokia.net
+        - "custom-metrics-apiserver.kube-system.svc.{{ caas.dns_domain }}"
     add_users:
       - kube
     become: true
