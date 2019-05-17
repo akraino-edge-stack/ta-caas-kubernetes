@@ -32,6 +32,9 @@ spec:
         - "--hostname-override={{ ansible_host }}"
         - "--masquerade-all=true"
       volumeMounts:
+        - name: time-mount
+          mountPath: /etc/localtime
+          readOnly: true
         - name: secret-kubernetes
           mountPath: /etc/kubernetes/ssl
           readOnly: true
@@ -42,6 +45,9 @@ spec:
           mountPath: /etc/kubernetes/kubeconfig
           readOnly: true
   volumes:
+    - name: time-mount
+      hostPath:
+        path: /etc/localtime
     - name: secret-kubernetes
       hostPath:
         path: /etc/kubernetes/ssl

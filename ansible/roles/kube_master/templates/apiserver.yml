@@ -30,6 +30,9 @@ spec:
         - "/kube-apiserver"
         {{ apiserver_params | to_nice_yaml | indent(8) }}
       volumeMounts:
+        - name: time-mount
+          mountPath: /etc/localtime
+          readOnly: true
         - name: secret-kubernetes
           mountPath: /etc/kubernetes/ssl
           readOnly: true
@@ -46,6 +49,9 @@ spec:
           mountPath: {{ caas.caas_policy_directory }}
           readOnly: true
   volumes:
+    - name: time-mount
+      hostPath:
+        path: /etc/localtime
     - name: secret-kubernetes
       hostPath:
         path: /etc/kubernetes/ssl
