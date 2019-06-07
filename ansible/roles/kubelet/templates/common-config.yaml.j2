@@ -1,0 +1,28 @@
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+address: "{{ networking.infra_internal.ip }}"
+authentication:
+  x509:
+    clientCAFile: "/etc/openssl/ca.pem"
+  webhook:
+    enabled: true
+  anonymous:
+    enabled: false
+authorization:
+  mode: "AlwaysAllow"
+cgroupsPerQOS: true
+cgroupRoot: "/"
+cgroupDriver: cgroupfs
+clusterDNS:
+- {{ caas.dns_svc_ip }}
+clusterDomain: {{ caas.dns_domain }}
+kubeReserved:
+  cpu: "{{ kube_reserved_cpu }}"
+rotateCertificates: true
+runtimeRequestTimeout: 5m0s
+staticPodPath: "/etc/kubernetes/manifests"
+streamingConnectionIdleTimeout: 5m0s
+systemReserved:
+  cpu: "{{ system_reserved_cpu }}"
+tlsCertFile: "/etc/kubernetes/ssl/kubelet-server.pem"
+tlsPrivateKeyFile: "/etc/kubernetes/ssl/kubelet-server-key.pem"

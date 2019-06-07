@@ -1,3 +1,4 @@
+#jinja2:trim_blocks:False
 {#
 Copyright 2019 Nokia
 
@@ -14,30 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 #}
 ---
-apiVersion: kubelet.config.k8s.io/v1beta1
-kind: KubeletConfiguration
-address: "{{ networking.infra_internal.ip }}"
-authentication:
-  x509:
-    clientCAFile: "/etc/openssl/ca.pem"
-  webhook:
-    enabled: true
-  anonymous:
-    enabled: false
-authorization:
-  mode: "AlwaysAllow"
-cgroupsPerQOS: true
-cgroupRoot: "/"
-cgroupDriver: cgroupfs
-clusterDNS:
-- {{ caas.dns_svc_ip }}
-clusterDomain: {{ caas.dns_domain }}
-staticPodPath: "/etc/kubernetes/manifests"
-rotateCertificates: true
-runtimeRequestTimeout: 5m0s
-streamingConnectionIdleTimeout: 5m0s
-tlsCertFile: "/etc/kubernetes/ssl/kubelet-server.pem"
-tlsPrivateKeyFile: "/etc/kubernetes/ssl/kubelet-server-key.pem"
+{% include 'common-config.yaml.j2' %}
 featureGates:
   CPUManager: false
   DevicePlugins: true
