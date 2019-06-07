@@ -34,3 +34,9 @@ kubectl_configs:
   - path: "/home/{{ users.admin_user_name }}/.kube/config"
     owner: "{{ users.admin_user_name }}"
     group: "{{ users.admin_user_name }}"
+
+kube_reserved_cpu: 0
+total_cpus: "{{ ansible_local['cpu_allocation'].values() | map(attribute='set') | map('length') | sum }}"
+default_allocation: "{{ caas.cpu_allocation_mapping | get_mapped_key('pool_name', 'default') }}"
+default_cpu: "{{ ansible_local['cpu_allocation'].get(default_allocation, {}).get('set', []) | length }}"
+system_reserved_cpu: "{{ total_cpus|int - kube_reserved_cpu|int - default_cpu|int  }}"
