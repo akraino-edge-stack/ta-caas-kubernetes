@@ -1,0 +1,8 @@
+Code-Review+1: Paul Carver <pcarver@att.com>
+Code-Review+2: Levente Kálé <levente.kale@nokia.com>
+Verified+1: Levente Kálé <levente.kale@nokia.com>
+Submitted-by: Levente Kálé <levente.kale@nokia.com>
+Submitted-at: Wed, 12 Jun 2019 13:27:34 +0000
+Reviewed-on: https://gerrit.akraino.org/r/c/ta/caas-kubernetes/+/730
+Project: ta/caas-kubernetes
+Branch: refs/heads/master
