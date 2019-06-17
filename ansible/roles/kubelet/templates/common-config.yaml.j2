@@ -16,6 +16,14 @@ cgroupDriver: cgroupfs
 clusterDNS:
 - {{ caas.dns_svc_ip }}
 clusterDomain: {{ caas.dns_domain }}
+evictionHard:
+  memory.available: "{{caas_hard_eviction_threshold}}"
+evictionMinimumReclaim:
+  memory.available: "512Mi"
+evictionSoft:
+  memory.available: "{{caas_soft_eviction_threshold}}"
+evictionSoftGracePeriod:
+  memory.available: "30s"
 kubeReserved:
   cpu: "{{ kube_reserved_cpu }}"
 rotateCertificates: true
@@ -24,5 +32,6 @@ staticPodPath: "/etc/kubernetes/manifests"
 streamingConnectionIdleTimeout: 5m0s
 systemReserved:
   cpu: "{{ system_reserved_cpu }}"
+  memory: "{{ system_reserved_memory }}"
 tlsCertFile: "/etc/kubernetes/ssl/kubelet-server.pem"
 tlsPrivateKeyFile: "/etc/kubernetes/ssl/kubelet-server-key.pem"
