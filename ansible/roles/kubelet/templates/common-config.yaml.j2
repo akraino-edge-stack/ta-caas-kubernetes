@@ -26,3 +26,12 @@ systemReserved:
   cpu: "{{ system_reserved_cpu }}"
 tlsCertFile: "/etc/kubernetes/ssl/kubelet-server.pem"
 tlsPrivateKeyFile: "/etc/kubernetes/ssl/kubelet-server-key.pem"
+SystemReserved: "memory={{ system_reserved_memory }}"
+EvictionHard:
+  memory.available: "{{caas_hard_eviction_threshold}}"
+EvictionSoft:
+  memory.available: "{{caas_soft_eviction_threshold}}"
+EvictionSoftGracePeriod:
+  memory.available: "30s"
+EvictionMinimumReclaim:
+  memory.available: "512Mi"
