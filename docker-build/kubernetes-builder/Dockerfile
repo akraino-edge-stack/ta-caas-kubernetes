@@ -31,6 +31,7 @@ RUN set -x \
 &&  yum install -y --setopt=skip_missing_names_on_install=False \
       ${build_packages} \
       bash \
+      conntrack-tools \
       golang \
       curl \
       binutils \
