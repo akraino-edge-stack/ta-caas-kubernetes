@@ -15,7 +15,7 @@
 %define COMPONENT kubernetes
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.15.0
-%define RPM_MINOR_VERSION 0
+%define RPM_MINOR_VERSION 1
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define KUBERNETESPAUSE_VERSION 3.1
 
@@ -35,8 +35,8 @@ BuildArch:      x86_64
 Vendor:         %{_platform_vendor} and kubernetes/kubernetes unmodified
 Source0:        %{name}-%{version}.tar.gz
 
-Requires: docker-ce >= 18.09.2
-BuildRequires: docker-ce-cli >= 18.09.2
+Requires: docker-ce >= 18.09.2, rsync
+BuildRequires: docker-ce-cli >= 18.09.2, xz
 
 # more info at: https://fedoraproject.org/wiki/Packaging:Debuginfo No build ID note in Flannel
 %global debug_package %{nil}
@@ -99,7 +99,7 @@ docker build \
   --tag hyperkube:%{IMAGE_TAG} \
   %{docker_build_dir}/hyperkube
 mkdir -p %{docker_save_dir}
-docker save hyperkube:%{IMAGE_TAG} | gzip -c > "%{docker_save_dir}/hyperkube:%{IMAGE_TAG}.tar"
+docker save hyperkube:%{IMAGE_TAG} | xz -z -T2 > "%{docker_save_dir}/hyperkube:%{IMAGE_TAG}.tar"
 docker rmi hyperkube:%{IMAGE_TAG}
 
 # Build kubernetes pause container image
@@ -117,7 +117,7 @@ docker build \
   --tag kubernetespause:%{IMAGE_TAG} \
   %{docker_build_dir}/kubernetespause
 mkdir -p %{docker_save_dir}
-docker save kubernetespause:%{IMAGE_TAG} | gzip -c > "%{docker_save_dir}/kubernetespause:%{IMAGE_TAG}.tar"
+docker save kubernetespause:%{IMAGE_TAG} | xz -z -T2 > "%{docker_save_dir}/kubernetespause:%{IMAGE_TAG}.tar"
 docker rmi kubernetespause:%{IMAGE_TAG}
 
 %install
