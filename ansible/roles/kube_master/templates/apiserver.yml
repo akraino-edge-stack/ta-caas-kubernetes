@@ -29,6 +29,9 @@ spec:
       command:
         - "/kube-apiserver"
         {{ apiserver_params | to_nice_yaml | indent(8) }}
+      resources:
+        requests:
+          cpu: "50m"
       volumeMounts:
         - name: time-mount
           mountPath: /etc/localtime

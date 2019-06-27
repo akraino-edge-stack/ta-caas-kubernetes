@@ -47,6 +47,9 @@ spec:
           port: 10252
         initialDelaySeconds: 15
         timeoutSeconds: 1
+      resources:
+        requests:
+          cpu: "10m"
       volumeMounts:
         - name: time-mount
           mountPath: /etc/localtime

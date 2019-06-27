@@ -31,6 +31,9 @@ spec:
         - "--kubeconfig=/etc/kubernetes/kubeconfig/proxyc.yml"
         - "--hostname-override={{ ansible_host }}"
         - "--masquerade-all=true"
+      resources:
+        requests:
+          cpu: "10m"
       volumeMounts:
         - name: time-mount
           mountPath: /etc/localtime
