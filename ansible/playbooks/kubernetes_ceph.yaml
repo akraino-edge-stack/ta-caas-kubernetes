@@ -19,4 +19,5 @@
   become: true
   become_user: "{{ users.admin_user_name }}"
   roles:
-    - kubernetes_ceph
+   - role: kubernetes_ceph
+     when: (ceph_configured | default(False))
