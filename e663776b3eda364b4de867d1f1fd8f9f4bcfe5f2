@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d01437bb_805ff4dc",
+        "filename": "ansible/roles/kube_master/defaults/main.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-08-07T17:37:24Z",
+      "side": 1,
+      "message": "and where does caas.caas_max_audit_size come from?\nBTW the name contains a stutter, it could be simply caas.max_audit_size",
+      "revId": "e663776b3eda364b4de867d1f1fd8f9f4bcfe5f2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
