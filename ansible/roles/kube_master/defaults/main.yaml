@@ -30,6 +30,7 @@ apiserver_feature_gates:
   DevicePlugins: true
   HugePages: true
   TokenRequest: true
+  SCTPSupport: true
 
 apiserver_params:
   - "--admission-control={{ apiserver_admission_controllers | join(',') }}"
