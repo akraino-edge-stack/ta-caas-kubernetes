@@ -64,7 +64,6 @@
     owner: "{{ caas.uid.kube }}"
     group: "{{ caas.uid.kube }}"
     state: directory
-    mode: 0700
   become_user: "root"
 
 - name: create directory for audit policy
@@ -92,10 +91,6 @@
     - "{{ caas.uid.kube }}"
     - "{{ users.admin_user_name }}"
   become_user: "root"
- 
-- name: Ask the audit log disc size
-  shell: df -BM --output=size,target | grep audit | awk '{print $1}' | tr -d 'M'
-  register: audit_disc_size
 
 - name: template apiserver
   vars:
