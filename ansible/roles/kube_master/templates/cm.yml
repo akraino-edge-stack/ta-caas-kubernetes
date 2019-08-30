@@ -35,7 +35,7 @@ spec:
         - "--service-account-private-key-file=/etc/kubernetes/ssl/service-account-key.pem"
         - "--root-ca-file=/etc/openssl/ca.pem"
         - "{% if groups['caas_master']|length|int > 1 %}--leader-elect=true{% endif %}"
-        - "--cluster-cidr=10.244.0.0/16"
+        - "--cluster-cidr={{ caas.oam_cidr }}"
         - "--use-service-account-credentials=true"
         - "--allocate-node-cidrs=true"
         - "--cluster-signing-cert-file=/etc/openssl/ca.pem"
