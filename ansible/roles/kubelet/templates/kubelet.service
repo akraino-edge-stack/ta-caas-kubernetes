@@ -34,7 +34,7 @@ EnvironmentFile=/etc/kubernetes/env.list
 
 ExecStartPre={{ caas.libexec_dir }}/kubelet_start.sh
 
-ExecStart=/usr/bin/kubelet {{ kubelet_params | join(' ') }}
+ExecStart=/usr/bin/kubelet {{ kubelet_params | join(' ') }} --root-dir={{ caas.kubelet_root_directory }}
 
 ExecStop={{ caas.libexec_dir }}/kubelet_stop.sh
 

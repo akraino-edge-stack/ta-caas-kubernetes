@@ -24,11 +24,11 @@ then
   kill -9 $kubeletpid
 fi
 
-for D in /var/lib/kubelet/pods/*
+for D in {{ caas.kubelet_root_directory }}/pods/*
 do
   if [ -d "${D}" ]
   then
-    rm -rf /var/lib/kubelet/pods/${D} || echo "Can not remove directory, skipping it"
+    rm -rf {{ caas.kubelet_root_directory }}/pods/${D} || echo "Can not remove directory, skipping it"
   fi
 done
 
