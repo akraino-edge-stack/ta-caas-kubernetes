@@ -20,7 +20,7 @@
     name: "{{ item }}"
     state: directory
   with_items:
-    - /var/lib/kubelet
+    - "{{ kubelet_root_directory }}"
     - /var/lib/cni
     - /etc/kubernetes/manifests
     - /etc/kubernetes/kubeconfig
