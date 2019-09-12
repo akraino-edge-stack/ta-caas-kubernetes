@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a3761d2_c023f17a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2019-09-12T11:40:20Z",
+      "side": 1,
+      "message": "For future reference, please use the imperative mood in the subject line. For example \"Change http to https in etcd-servers URL\".\n\nThis is what the output of \"git log --oneline\" looks like for this repository. Notice how some lines are more helpful than others. \"Missed the secure part\" is one of the less informative ones. Also note that a message like \"5780ced Update Kubernetes to version 1.15.3\" is more helpful than \"a0beb18 Kubernetes version update\" even though it\u0027s just a few characters longer.\n\n b71b415 (HEAD -\u003e master, origin/master, origin/HEAD) Missed the secure part\n 62c1554 Etcd server istead of proxy\n c106ff9 Go version updated to 1.12.9\n e18fd30 Audit log bugfix\n 5780ced Update Kubernetes to version 1.15.3\n fcc3c0d Revert \"Audit log bugfix\"\n 0141a51 Audit log bugfix\n fd5f1b3 Add SCTP support to kube-api server\n 6f2d990 Kubernetes update to 1.15.2\n 077d9be Kubelet env.list updated for ansible variable\n 8eb26af Kubernetes update\n 59efd48 Etcd proxy added caas-etcd\n b0975a5 do not set ceph if ceph not configured\n 7217b21 Manifest update\n 6ed00f3 Compress image using xz\n a0beb18 Kubernetes version update\n df3fea7 Make CPU reservations based on CPU allocation\n ed93069 Set time zone\n 235d57c Remove hardcoded libexec directory path\n 9e94244 Make CaaS DNS domains configurable\n b27cb82 Missing package added.\n 8321feb Added seed code for caas-kubernetes.\n 5c0c2ac Initial empty repository",
+      "revId": "b71b415e681f1418557ed00ae47d080f8320e15c",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    }
+  ]
+}
