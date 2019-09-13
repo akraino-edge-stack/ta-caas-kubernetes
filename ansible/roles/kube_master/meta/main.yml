@@ -89,6 +89,7 @@ dependencies:
     alt_names:
       dns:
         - "custom-metrics-apiserver.kube-system.svc.{{ caas.dns_domain }}"
+        - "custom-metrics-apiserver.kube-system.svc"
     add_users:
       - kube
     become: true
