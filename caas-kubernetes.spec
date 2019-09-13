@@ -31,7 +31,7 @@ Version:        %{RPM_MAJOR_VERSION}
 Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service %{COMPONENT} component
 License:        %{_platform_licence} and Apache License and GNU General Public License v2.0 only and GNU Lesser General Public License v2.1 only and MIT license and BSD and MIT license and ISC License and Creative Commons Attribution ShareAlike 4.0 International and Mozilla Public License and COMMON DEVELOPMENT AND DISTRIBUTION LICENSE and Lesser General Public License and Creative Commons - Public Domain and Creative Commons Public License and BSD 3-Clause License
-BuildArch:      x86_64
+BuildArch:      %{_arch}
 Vendor:         %{_platform_vendor} and kubernetes/kubernetes unmodified
 Source0:        %{name}-%{version}.tar.gz
 
@@ -114,7 +114,7 @@ docker build \
   --build-arg https_proxy="${https_proxy}" \
   --build-arg no_proxy="${no_proxy}" \
   --build-arg KUBERNETESPAUSE_VERSION="%{KUBERNETESPAUSE_VERSION}" \
-  --tag kubernetespause:%{IMAGE_TAG} \
+  --tag kubernetespause:%{KUBERNETESPAUSE_VERSION} \
   %{docker_build_dir}/kubernetespause
 mkdir -p %{docker_save_dir}
 docker save kubernetespause:%{IMAGE_TAG} | xz -z -T2 > "%{docker_save_dir}/kubernetespause:%{IMAGE_TAG}.tar"
