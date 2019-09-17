@@ -15,8 +15,6 @@ limitations under the License.
 #}
 [Unit]
 Description=Kubelethealthcheck
-After=kubelet.service
-BindsTo=kubelet.service
 
 [Service]
 Slice=podruntime.slice
