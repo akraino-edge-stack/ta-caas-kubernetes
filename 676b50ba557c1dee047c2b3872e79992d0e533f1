@@ -1,0 +1,7 @@
+Code-Review+2: Levente Kálé <levente.kale@nokia.com>
+Verified+1: Akraino Jobbuilder <collab-it+akraino-jobbuilder@linuxfoundation.org>
+Submitted-by: Krisztián Lengyel <krisztian.lengyel@nokia.com>
+Submitted-at: Wed, 18 Sep 2019 18:01:54 +0000
+Reviewed-on: https://gerrit.akraino.org/r/c/ta/caas-kubernetes/+/1590
+Project: ta/caas-kubernetes
+Branch: refs/heads/master
