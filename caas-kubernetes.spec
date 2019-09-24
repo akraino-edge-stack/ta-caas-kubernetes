@@ -15,7 +15,7 @@
 %define COMPONENT kubernetes
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.16.0
-%define RPM_MINOR_VERSION 7
+%define RPM_MINOR_VERSION 8
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define KUBERNETESPAUSE_VERSION 3.1
 
@@ -155,7 +155,6 @@ ln -s %{_playbooks_path}/kube_secret_key_creation.yaml      %{_postconfig_path}/
 ln -s %{_playbooks_path}/kube_secret_key_distribution.yaml  %{_postconfig_path}/
 ln -s %{_playbooks_path}/kube_token_creation.yaml           %{_postconfig_path}/
 ln -s %{_playbooks_path}/kube_token_distribution.yaml       %{_postconfig_path}/
-ln -s %{_playbooks_path}/kubernetes_ceph.yaml               %{_postconfig_path}/
 ln -s %{_playbooks_path}/master_kube_proxy.yaml             %{_postconfig_path}/
 ln -s %{_playbooks_path}/master_kubelet.yaml                %{_postconfig_path}/
 ln -s %{_playbooks_path}/service_account_creation.yaml      %{_postconfig_path}/
@@ -171,7 +170,6 @@ if [ $1 -eq 0 ]; then
   rm -f %{_postconfig_path}/kube_secret_key_distribution.yaml
   rm -f %{_postconfig_path}/kube_token_creation.yaml
   rm -f %{_postconfig_path}/kube_token_distribution.yaml
-  rm -f %{_postconfig_path}/kubernetes_ceph.yaml
   rm -f %{_postconfig_path}/master_kube_proxy.yaml
   rm -f %{_postconfig_path}/master_kubelet.yaml
   rm -f %{_postconfig_path}/service_account_creation.yaml
