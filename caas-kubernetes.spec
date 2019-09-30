@@ -15,7 +15,7 @@
 %define COMPONENT kubernetes
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.16.0
-%define RPM_MINOR_VERSION 1
+%define RPM_MINOR_VERSION 2
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define KUBERNETESPAUSE_VERSION 3.1
 
@@ -25,6 +25,11 @@
 %define docker_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-build
 %define docker_save_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-save
 %define built_binaries_dir /binary-save
+%ifarch aarch64
+%define CENTOS_BASE centos@sha256:df89b0a0b42916b5b31b334fd52d3e396c226ad97dfe772848bdd6b00fb42bf0
+%else
+%define CENTOS_BASE centos:7.6.1810
+%endif
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
@@ -64,6 +69,7 @@ docker build \
   --build-arg KUBERNETES_VERSION="%{version}" \
   --build-arg go_version="%{go_version}" \
   --build-arg binaries="%{built_binaries_dir}" \
+  --build-arg CENTOS_BASE="%{CENTOS_BASE}" \
   --tag kubernetes-builder:%{IMAGE_TAG} \
   %{docker_build_dir}/kubernetes-builder
 
@@ -96,6 +102,7 @@ docker build \
   --build-arg https_proxy="${https_proxy}" \
   --build-arg no_proxy="${no_proxy}" \
   --build-arg ceph_version="%{ceph_version}" \
+  --build-arg CENTOS_BASE="%{CENTOS_BASE}" \
   --tag hyperkube:%{IMAGE_TAG} \
   %{docker_build_dir}/hyperkube
 mkdir -p %{docker_save_dir}
