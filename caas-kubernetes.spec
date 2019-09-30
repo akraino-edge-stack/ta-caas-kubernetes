@@ -15,7 +15,7 @@
 %define COMPONENT kubernetes
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.16.0
-%define RPM_MINOR_VERSION 8
+%define RPM_MINOR_VERSION 9
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define KUBERNETESPAUSE_VERSION 3.1
 
@@ -25,6 +25,7 @@
 %define docker_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-build
 %define docker_save_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-save
 %define built_binaries_dir /binary-save
+%define centos_build 191001
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
@@ -36,7 +37,7 @@ Vendor:         %{_platform_vendor} and kubernetes/kubernetes unmodified
 Source0:        %{name}-%{version}.tar.gz
 
 Requires: docker-ce >= 18.09.2, rsync
-BuildRequires: docker-ce-cli >= 18.09.2, xz
+BuildRequires: docker-ce-cli >= 18.09.2, xz, wget
 
 # more info at: https://fedoraproject.org/wiki/Packaging:Debuginfo No build ID note in Flannel
 %global debug_package %{nil}
@@ -50,6 +51,7 @@ This container contains the %{COMPONENT} service.
 
 # Build Kubernetes binaries
 %build
+wget --progress=dot:giga http://artifacts.ci.centos.org/sig-cloudinstance/centos-7-%{centos_build}/%{_arch}/centos-7-%{_arch}-docker.tar.xz -O %{docker_build_dir}/kubernetes-builder/centos-7-docker.tar.xz
 set -x
 docker build \
   --network=host \
@@ -81,6 +83,7 @@ docker rm -f ${builder_container}
 docker rmi kubernetes-builder:%{IMAGE_TAG}
 
 # Build hyperkube container image
+wget --progress=dot:giga http://artifacts.ci.centos.org/sig-cloudinstance/centos-7-%{centos_build}/%{_arch}/centos-7-%{_arch}-docker.tar.xz -O %{docker_build_dir}/hyperkube/centos-7-docker.tar.xz
 rsync -av %{binary_build_dir}/kube-apiserver %{docker_build_dir}/hyperkube/
 rsync -av %{binary_build_dir}/kube-controller-manager %{docker_build_dir}/hyperkube/
 rsync -av %{binary_build_dir}/kube-proxy %{docker_build_dir}/hyperkube/

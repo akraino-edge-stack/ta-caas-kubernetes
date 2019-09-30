@@ -13,4 +13,4 @@
 # limitations under the License.
 
 ARG KUBERNETESPAUSE_VERSION=3.1
-FROM gcr.io/google-containers/pause-amd64:${KUBERNETESPAUSE_VERSION}
+FROM gcr.io/google-containers/pause:${KUBERNETESPAUSE_VERSION}

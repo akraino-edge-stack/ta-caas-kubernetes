@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM centos:7.6.1810
+FROM scratch
+ADD centos-7-docker.tar.xz /
+CMD ["/bin/bash"]
 MAINTAINER Krisztian Lengyel <krisztian.lengyel@nokia.com>
 
 ARG ceph_version
