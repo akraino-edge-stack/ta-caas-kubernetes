@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM centos:7.6.1810
+FROM scratch
+ADD centos-7-docker.tar.xz /
+CMD ["/bin/bash"]
 MAINTAINER Krisztian Lengyel <krisztian.lengyel@nokia.com>
 
 ARG KUBERNETES_VERSION
@@ -41,7 +43,8 @@ RUN set -x \
       grep \
       util-linux \
 &&  mkdir -p ${go_install_dir} \
-&&  curl -fsSL -k https://dl.google.com/go/go${go_version}.linux-amd64.tar.gz | tar zx --strip-components=1 -C ${go_install_dir} \
+&&  if [ $(uname -m) == 'aarch64' ]; then HOST_ARCH=arm64; else HOST_ARCH=amd64; fi \
+&&  curl -fsSL -k https://dl.google.com/go/go${go_version}.linux-${HOST_ARCH}.tar.gz | tar zx --strip-components=1 -C ${go_install_dir} \
 #
 # Build Kubernetes
 #
@@ -55,4 +58,4 @@ RUN set -x \
 &&  make WHAT="cmd/kube-proxy" \
 &&  make WHAT="cmd/kube-scheduler" \
 &&  mkdir -p ${binaries} \
-&&  mv ./_output/local/bin/linux/amd64/{kubelet,kubectl,kube-apiserver,kube-controller-manager,kube-proxy,kube-scheduler} ${binaries}/ \
+&&  mv ./_output/local/bin/linux/${HOST_ARCH}/{kubelet,kubectl,kube-apiserver,kube-controller-manager,kube-proxy,kube-scheduler} ${binaries}/ \
