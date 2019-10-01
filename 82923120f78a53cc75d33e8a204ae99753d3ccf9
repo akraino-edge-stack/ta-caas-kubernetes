@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6427955e_d0cda692",
+        "filename": "caas-kubernetes.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-01T14:59:51Z",
+      "side": 1,
+      "message": "same comment here: if there is a common version working for all archs, let\u0027s use that one for both",
+      "revId": "82923120f78a53cc75d33e8a204ae99753d3ccf9",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
