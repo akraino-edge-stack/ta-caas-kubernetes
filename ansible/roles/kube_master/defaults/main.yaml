@@ -28,7 +28,6 @@ apiserver_admission_controllers:
 apiserver_feature_gates:
   CPUManager: false
   DevicePlugins: true
-  HugePages: true
   TokenRequest: true
   SCTPSupport: true
 
@@ -76,9 +75,7 @@ apiserver_params:
 controllermanager_feature_gates:
   CPUManager: false
   DevicePlugins: true
-  HugePages: true
 
 scheduler_feature_gates:
   CPUManager: false
   DevicePlugins: true
-  HugePages: true
