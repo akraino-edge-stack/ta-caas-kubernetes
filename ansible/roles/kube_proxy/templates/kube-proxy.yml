@@ -29,7 +29,8 @@ spec:
       command:
         - "/kube-proxy"
         - "--kubeconfig=/etc/kubernetes/kubeconfig/proxyc.yml"
-        - "--hostname-override={{ ansible_host }}"
+        - "--bind-adress={{ networking.infra_internal.ip }}"
+        - "--hostname-override={{ networking.infra_internal.ip }}"
         - "--masquerade-all=true"
       resources:
         requests:
