@@ -15,7 +15,7 @@
 %define COMPONENT kubernetes
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.16.0
-%define RPM_MINOR_VERSION 5
+%define RPM_MINOR_VERSION 6
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define KUBERNETESPAUSE_VERSION 3.1
 
@@ -160,6 +160,7 @@ ln -s %{_playbooks_path}/master_kube_proxy.yaml             %{_postconfig_path}/
 ln -s %{_playbooks_path}/master_kubelet.yaml                %{_postconfig_path}/
 ln -s %{_playbooks_path}/service_account_creation.yaml      %{_postconfig_path}/
 ln -s %{_playbooks_path}/service_account_distribution.yaml  %{_postconfig_path}/
+ln -s %{_playbooks_path}/set_nodes_label.yaml               %{_postconfig_path}/
 
 %postun
 if [ $1 -eq 0 ]; then
@@ -175,6 +176,7 @@ if [ $1 -eq 0 ]; then
   rm -f %{_postconfig_path}/master_kubelet.yaml
   rm -f %{_postconfig_path}/service_account_creation.yaml
   rm -f %{_postconfig_path}/service_account_distribution.yaml
+  rm -f %{_postconfig_path}/set_nodes_label.yaml
 fi
 
 %clean
