@@ -1,0 +1,8 @@
+Code-Review+1: Krisztián Lengyel <krisztian.lengyel@nokia.com>
+Verified+1: Akraino Jobbuilder <collab-it+akraino-jobbuilder@linuxfoundation.org>
+Code-Review+2: Balint Varga <balint.varga@nokia.com>
+Submitted-by: Balint Varga <balint.varga@nokia.com>
+Submitted-at: Tue, 08 Oct 2019 14:01:21 +0000
+Reviewed-on: https://gerrit.akraino.org/r/c/ta/caas-kubernetes/+/1748
+Project: ta/caas-kubernetes
+Branch: refs/heads/master
