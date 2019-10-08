@@ -14,5 +14,5 @@
 # limitations under the License.
 
 - name: set node role for cluster member
-  shell: "kubectl label node {{ networking.infra_internal.ip }} kubernetes.io/role={{ noderole }}"
+  shell: "kubectl label node {{ networking.infra_internal.ip }} kubernetes.io/role={{ hosts[hostname]['noderole'] }}"
 
