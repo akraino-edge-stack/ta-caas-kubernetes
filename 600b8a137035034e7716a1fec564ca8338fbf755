@@ -1,0 +1,7 @@
+Code-Review+2: Levente Kálé <levente.kale@nokia.com>
+Verified+1: Akraino Jobbuilder <collab-it+akraino-jobbuilder@linuxfoundation.org>
+Submitted-by: Balint Varga <balint.varga@nokia.com>
+Submitted-at: Tue, 08 Oct 2019 08:35:06 +0000
+Reviewed-on: https://gerrit.akraino.org/r/c/ta/caas-kubernetes/+/1743
+Project: ta/caas-kubernetes
+Branch: refs/heads/master
