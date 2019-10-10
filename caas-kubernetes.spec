@@ -15,11 +15,11 @@
 %define COMPONENT kubernetes
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.16.0
-%define RPM_MINOR_VERSION 7
+%define RPM_MINOR_VERSION 8
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define KUBERNETESPAUSE_VERSION 3.1
 
-%define go_version 1.12.9
+%define go_version 1.12.10
 %define ceph_version 12.2.5
 %define binary_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/binary-save
 %define docker_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-build
