@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45be4833_80832133",
+        "filename": "caas-kubernetes.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-17T14:17:08Z",
+      "side": 1,
+      "message": "sorry but we had a ClassA security CVE against K8s, needed to prioritize that :)",
+      "revId": "8959e70d1ff2b7bc58971f87505d6c7be39ad890",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
