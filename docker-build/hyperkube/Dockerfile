@@ -33,6 +33,7 @@ RUN useradd -u 144 -M -s /sbin/nologin kube \
 &&  yum install -y --setopt=skip_missing_names_on_install=False \
       ${ceph_packages} \
       conntrack-tools \
+      grubby \
 \
 # Install kubernetes
 &&  chmod a+x /kube-apiserver \
@@ -42,4 +43,5 @@ RUN useradd -u 144 -M -s /sbin/nologin kube \
 # Clean up
 &&  yum erase -y ceph-release \
 &&  yum autoremove -y \
+&&  yum erase -y grubby \
 &&  yum clean all -y \
