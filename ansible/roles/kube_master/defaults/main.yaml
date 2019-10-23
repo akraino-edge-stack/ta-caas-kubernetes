@@ -71,6 +71,7 @@ apiserver_params:
   - "--tls-cert-file=/etc/kubernetes/ssl/tls-cert.pem"
   - "--tls-private-key-file=/etc/kubernetes/ssl/apiserver{{ nodeindex }}-key.pem"
   - "--token-auth-file={{ caas.cert_path }}/{{ caas.tokenscsv_filename }}"
+  - "--runtime-config=apps/v1beta1=true,apps/v1beta2=true,extensions/v1beta1/daemonsets=true,extensions/v1beta1/deployments=true,extensions/v1beta1/replicasets=true,extensions/v1beta1/networkpolicies=true,extensions/v1beta1/podsecuritypolicies=true"
 
 controllermanager_feature_gates:
   CPUManager: false
