@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "719a4ffb_c86ecc44",
+        "filename": "ansible/roles/kube_master/defaults/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-10-25T12:50:54Z",
+      "side": 1,
+      "message": "Why do we need this change ?",
+      "revId": "2bc4b2f98ce026fe437acef4f36fc7d2aa06fea7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
