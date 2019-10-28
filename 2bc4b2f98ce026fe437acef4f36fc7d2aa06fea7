@@ -34,6 +34,24 @@
       "revId": "2bc4b2f98ce026fe437acef4f36fc7d2aa06fea7",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2cc5ff41_43eb331a",
+        "filename": "ansible/roles/kube_master/defaults/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-10-28T07:21:10Z",
+      "side": 1,
+      "message": "So we should have this legacy support for six months ?",
+      "parentUuid": "ea6a3ab1_a71af383",
+      "revId": "2bc4b2f98ce026fe437acef4f36fc7d2aa06fea7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
