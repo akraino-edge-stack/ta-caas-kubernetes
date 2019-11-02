@@ -52,6 +52,24 @@
       "revId": "2bc4b2f98ce026fe437acef4f36fc7d2aa06fea7",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c7fc1e9_f53722b9",
+        "filename": "ansible/roles/kube_master/defaults/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 60
+      },
+      "writtenOn": "2019-11-02T00:01:03Z",
+      "side": 1,
+      "message": "To balance the concerns on both sides, I suggest we offer this backwards compatibility in isos built through the end of the year.  In January we should remove this option. Users that need it can continue to use any 2019 iso until their application is updated.",
+      "parentUuid": "2cc5ff41_43eb331a",
+      "revId": "2bc4b2f98ce026fe437acef4f36fc7d2aa06fea7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
