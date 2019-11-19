@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "36090df2_d26e90a3",
+        "filename": "ansible/roles/kubelet/templates/kubelet_healthcheck.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-11-19T12:20:18Z",
+      "side": 1,
+      "message": "Either \"ok\" or curl: (7) Failed connect to 127.0.0.1:10248; Connection refused",
+      "parentUuid": "9e1b83f6_7bc48762",
+      "revId": "5f8eb2f0e14bf53ddff3e70f8f11d26f040968f0",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a9a345c2_376e8a68",
         "filename": "ansible/roles/kubelet/templates/kubelet_healthcheck.sh",
         "patchSetId": 1
