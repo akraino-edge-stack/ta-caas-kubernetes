@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3075308b_decf9e1b",
+        "filename": "ansible/roles/kubelet/templates/kubelet_healthcheck.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-11-19T12:15:54Z",
+      "side": 1,
+      "message": "Independent",
+      "parentUuid": "2ca1066a_c3dcd7db",
+      "revId": "5f8eb2f0e14bf53ddff3e70f8f11d26f040968f0",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2862bc57_f43713d2",
         "filename": "ansible/roles/kubelet/templates/kubelet_healthcheck.sh",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-11-15T11:33:07Z",
       "side": 1,
       "message": "don\u0027t bake the endpoint into the script",
+      "revId": "5f8eb2f0e14bf53ddff3e70f8f11d26f040968f0",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74b52c84_7ec8f118",
+        "filename": "ansible/roles/kubelet/templates/kubelet_healthcheck.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-11-19T12:15:54Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "2862bc57_f43713d2",
       "revId": "5f8eb2f0e14bf53ddff3e70f8f11d26f040968f0",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "090cdd0e_a9177f65",
+        "filename": "ansible/roles/kubelet/templates/kubelet_healthcheck.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-11-19T12:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9a345c2_376e8a68",
+      "revId": "5f8eb2f0e14bf53ddff3e70f8f11d26f040968f0",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4b031c37_28b00fb6",
         "filename": "ansible/roles/kubelet/templates/kubelet_healthcheck.sh",
         "patchSetId": 1
@@ -81,6 +135,24 @@
       "writtenOn": "2019-11-15T11:33:07Z",
       "side": 1,
       "message": "too much. lower to 1 sec",
+      "revId": "5f8eb2f0e14bf53ddff3e70f8f11d26f040968f0",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b5d9e73_a856a024",
+        "filename": "ansible/roles/kubelet/templates/kubelet_healthcheck.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-11-19T12:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b031c37_28b00fb6",
       "revId": "5f8eb2f0e14bf53ddff3e70f8f11d26f040968f0",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
