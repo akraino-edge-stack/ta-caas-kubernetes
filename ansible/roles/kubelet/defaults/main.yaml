@@ -24,6 +24,7 @@ common_kubelet_params:
   - "--node-labels={{ lookup('template', 'node_labels.j2') | trim }}"
   - "--pod-infra-container-image={{ container_image_names | select('search', '/kubernetespause') | list | last }}"
   - "--register-node=true"
+  - "--enable-debugging-handlers=false"
 
 master_kubelet_params:
   - "--config=/etc/kubernetes/kubeconfig/master-config.yaml"
