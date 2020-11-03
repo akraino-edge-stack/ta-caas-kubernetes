@@ -18,12 +18,13 @@ kubelet_healthcheck_port: 10248
 kubelet_kubeconfig_path: "{% if nodename | search('caas_master') %}/etc/kubernetes/kubeconfig/kubeletc.yml{% else %}/root/kubeletc.yml{% endif %}"
 
 common_kubelet_params:
-  - "--hostname-override={{ networking.infra_internal.ip }}"
+  - "--hostname-override={{ hostname }}"
   - "--kubeconfig={{ kubelet_kubeconfig_path }}"
   - "--network-plugin=cni"
   - "--node-labels={{ lookup('template', 'node_labels.j2') | trim }}"
   - "--pod-infra-container-image={{ container_image_names | select('search', '/kubernetespause') | list | last }}"
   - "--register-node=true"
+  - "--enable-debugging-handlers=false"
 
 master_kubelet_params:
   - "--config=/etc/kubernetes/kubeconfig/master-config.yaml"
