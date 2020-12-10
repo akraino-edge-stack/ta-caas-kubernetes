@@ -1,0 +1,8 @@
+Verified+1: Paul Carver <pcarver@att.com>
+Code-Review+2: Paul Carver <pcarver@att.com>
+Code-Review+1: d k <davek@research.att.com>
+Submitted-by: Paul Carver <pcarver@att.com>
+Submitted-at: Thu, 10 Dec 2020 17:19:05 +0000
+Reviewed-on: https://gerrit.akraino.org/r/c/ta/caas-kubernetes/+/3988
+Project: ta/caas-kubernetes
+Branch: refs/heads/master
