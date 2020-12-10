@@ -18,7 +18,7 @@ kubelet_healthcheck_port: 10248
 kubelet_kubeconfig_path: "{% if nodename | search('caas_master') %}/etc/kubernetes/kubeconfig/kubeletc.yml{% else %}/root/kubeletc.yml{% endif %}"
 
 common_kubelet_params:
-  - "--hostname-override={{ hostname }}"
+  - "--hostname-override={{ networking.infra_internal.ip }}"
   - "--kubeconfig={{ kubelet_kubeconfig_path }}"
   - "--network-plugin=cni"
   - "--node-labels={{ lookup('template', 'node_labels.j2') | trim }}"
